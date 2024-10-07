@@ -1,6 +1,6 @@
-package DSA;
+package DSA.LinkedList;
 
-public class LinkedListPractice {
+public class LinkedListIntroduction {
    /*
         insert at beginning  O(1)
             1.create
