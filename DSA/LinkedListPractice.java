@@ -41,7 +41,7 @@ public class LinkedListPractice {
             /*
               Is the list Empty? (isEmpty)
                 1. If the pointer is null, List is empty.If not, it contains
-                    atleast one element
+                    atleast one element         
              */
     }
 }
