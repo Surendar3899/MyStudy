@@ -1,8 +1,7 @@
 package DSA;
 
 public class LinkedListPractice {
-    public static void main(String[] args) {
-        /*
+   /*
         insert at beginning  O(1)
             1.create
             2.Assing Date and pointer  values 
@@ -43,5 +42,7 @@ public class LinkedListPractice {
                 1. If the pointer is null, List is empty.If not, it contains
                     atleast one element         
              */
+    public static void main(String[] args) {
+       
     }
 }
