@@ -38,7 +38,7 @@ public class AddTwoNumberLinkedList {
         Node temp2 = list2.head;
 
         while(temp1 != null || temp2 != null || carry != 0){
-            int sum = temp1.data+ temp2.data+carry;
+            int sum = (int)temp1.data+(int)temp2.data+carry;
             carry = sum/10;
             System.out.println("sum "+sum);
             

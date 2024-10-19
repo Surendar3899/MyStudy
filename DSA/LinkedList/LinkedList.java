@@ -1,5 +1,6 @@
 package DSA.LinkedList;
 
+import java.util.Iterator;
 
 /*
  * Linked List
@@ -14,7 +15,7 @@ package DSA.LinkedList;
 
 
 
-public class LinkedList {
+public class LinkedList<T> implements Iterable {
 
     public Node head;
 
@@ -30,6 +31,18 @@ public class LinkedList {
     //     }
     
     // }
+
+
+        /*try the following methods
+        * 
+        * get(pos) - get(2)
+        * update(pos,val)
+        * deleteAtEnd
+        * insertAtEnd(val)
+        * search(val) - return index, -1
+        * contains(val) - return true or false
+        * length
+        */
 
     public LinkedList(){
         head = null;
@@ -54,7 +67,7 @@ public class LinkedList {
         }
     }
 
-    public void insertAtBeginning(int i) {
+    public void insertAtBeginning(T i) {
         Node newNode = new Node(i);
         if(head == null){
             head = newNode;
@@ -89,7 +102,7 @@ public class LinkedList {
         }
     }
 
-    public void insertAtPosition(int pos, int val) {
+    public void insertAtPosition(int pos, T val) {
 
         if(pos == 0){
             insertAtBeginning(val);
@@ -134,6 +147,96 @@ public class LinkedList {
         prev.next = temp.next;
 
         
+    }
+
+    public T getPos(int pos) throws Exception {
+        Node temp = head;
+        if(temp != null){
+            if(pos == 0){
+                return (T) temp.data;
+            }else{
+                for(int i = 0;i<pos;i++){
+                    temp = temp.next;
+                    if(temp == null){
+                        // System.out.println("Invalid position entered");
+                        // return null;
+                        throw new Exception("Invalid position entered");
+                    }
+                }
+                return (T)temp.data;
+            }
+        }
+        return null;
+        
+    }
+
+    public void update(int pos, T val) {
+       
+    }
+
+    @Override
+    public Iterator<T> iterator() {
+
+        System.out.println("call iterator method");
+
+        //return new LinkedListIterator();
+        return new Iterator<T>() {
+            //anonymous class
+            Node temp = head;
+            @Override
+            public boolean hasNext() {
+                return temp != null;
+            }
+
+            @Override
+            public T next() {
+                T val = (T) temp.data;
+                temp = temp.next;
+               return val;
+            }
+            
+        };
+
+        
+    }
+
+    private class LinkedListIterator implements Iterator<T> {
+        private Node<T> current = head;
+
+        @Override
+        public boolean hasNext() {
+            return current != null;
+        }
+
+        @Override
+        public T next() {
+            T data = current.data;
+            current = current.next;
+            return data;
+        }
+    }
+
+    public void reverse() {
+       Node temp = head;
+       Node temp1 = head;
+
+         Node prev = null;
+         Node current = head;
+         Node next = null;
+
+         while(current != null){
+            next = current.next;
+            current.next = prev;
+            prev = current;
+            current = next;
+
+
+
+         }
+         head = prev;
+
+
+       
     }
     
 }
