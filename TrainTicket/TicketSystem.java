@@ -23,7 +23,7 @@ public class TicketSystem {
 
     private static TicketSystem instance = null;
 
-    private TicketSystem() {
+    TicketSystem() {
         Arrays.fill(seatsAvailable, 8);
     }
 
@@ -50,14 +50,14 @@ public class TicketSystem {
     }
 
     protected void decreaseSeatAvailability(char source, char destination, int seats) {
-        for(int i=source - 'A';i<destination - 'A';i++) {
+        for(int i=source - 'A';i<=destination - 'A';i++) {
             seatsAvailable[i] -= seats;
         }
     }
 
     // used in Booking as well as WaitingListManager class
     protected boolean checkSeatAvailability(char source, char destination, int seats) {
-        for(int i=source - 'A';i<destination - 'A';i++) {
+        for(int i=source - 'A';i<=destination - 'A';i++) {
             if(seatsAvailable[i] < seats) {
                 return false;
             }

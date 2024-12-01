@@ -9,4 +9,9 @@ public class Node<T> {
         this.next = null;
 
     }
+
+    public Node(T val,Node node){
+        this.data = val;
+        this.next = node;
+    }
 }

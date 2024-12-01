@@ -44,6 +44,11 @@ public class Demo {
         list1.display();
 
 
+
+        Node<Integer> nodeList = new Node<>(2, new Node<>(3, new Node<>(4, null)));
+        
+
+
         
 
 
