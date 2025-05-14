@@ -7,10 +7,13 @@ public class TicketBooking {
     private TicketSystem ticketSystem;
 
     TicketBooking(char source, char destination, int seats) {
+        System.out.println("TickeBooking >>>>>>>>");
         this.source = source;
         this.destination = destination;
         this.seats = seats;
         this.ticketSystem = TicketSystem.getInstance();
+        System.out.println("TickeBooking <<<<<<<<<<<<<<<<");
+ 
     }
 
     private void bookTicket() {

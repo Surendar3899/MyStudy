@@ -1,7 +1,7 @@
 package LeetCode;
 
 public class ReverseInteger_07 {
-   int x = 1534236462;
+   int x = 1534236445;
 
    public static void main(String[] args) {
     ReverseInteger_07 obj = new ReverseInteger_07();
@@ -14,6 +14,8 @@ public class ReverseInteger_07 {
 
 
    public static int reverse(int x) {
+      System.out.println(Integer.MAX_VALUE);
+      System.out.println(Integer.MIN_VALUE);
         int value = 0;
         while(x != 0){
            int module = x%10;

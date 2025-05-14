@@ -30,7 +30,10 @@ class ListNode {
 class Solution {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
        
-        ListNode dummy = new ListNode(0);
+        //ListNode dummy = new ListNode(0);
+        ListNode dummy = new ListNode();
+        dummy.val = 1;
+        ListNode dummy1 = dummy;
         ListNode current = dummy;
         int carry = 0;
 
@@ -53,8 +56,8 @@ class Solution {
             current.next = new ListNode(sum % 10);
             current = current.next;
 
-            ListNode dummy1 = dummy;
-            ListNode current1 = current;
+           // ListNode dummy1 = dummy;
+           // ListNode current1 = current;
 
 
             if (l1 != null){
@@ -64,6 +67,14 @@ class Solution {
                 l2 = l2.next;
             }
         }
+        AddTwoNumbers_02 a1 = new AddTwoNumbers_02();
+        System.out.println("dummy .....");
+        a1.printList(dummy);
+        System.out.println("dummy1 ......");
+        a1.printList(dummy1);
+        System.out.println("current ......");
+        a1.printList(current);
+
 
         System.out.println("dummy val "+dummy.val);
         System.out.println("current val "+ current.val);
@@ -87,6 +98,7 @@ public class AddTwoNumbers_02 {
     }
 
     public static void printList(ListNode node) {
+        System.out.println("print list called");
         while (node != null) {
             System.out.print(node.val);
             if (node.next != null) {

@@ -24,6 +24,7 @@ public class TicketSystem {
     private static TicketSystem instance = null;
 
     TicketSystem() {
+        System.out.println("TicketSystem called");
         Arrays.fill(seatsAvailable, 8);
     }
 
@@ -72,7 +73,11 @@ public class TicketSystem {
     }
 
     protected void increaseSeatAvailability(char source, char destination, int seats) {
-        for(int i=source - 'A';i<destination - 'A';i++) {
+        System.out.println(">>increaseSeatAvailability");
+        System.out.println(source);
+        System.out.println(destination);
+        System.out.println(seats);
+        for(int i=source - 'A';i<=destination - 'A';i++) {
             seatsAvailable[i] += seats;
         }
     }

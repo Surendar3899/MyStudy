@@ -89,5 +89,58 @@ s consists of English letters (lower-case and upper-case), digits (0-9), ' ', '+
  */
 
 public class StringToInteger_08 {
-    
+
+    public static void main(String[] args) {
+        String s = "0000000000000000000000000000000000000009890000000000000000000000000000000000";
+        int result = myAtoi(s);
+        System.out.println("result is "+result);
+    }
+        
+    public static int myAtoi(String s) {
+        // Step 1: Skip leading whitespaces
+        int i = 0;
+        s = s.trim();
+        
+        if (s.length() == 0) {
+            return 0; // Return 0 if the string is empty or contains only spaces
+        }
+        
+        // Step 2: Handle the sign
+        boolean isNegative = false;
+        if (s.charAt(i) == '-') {
+            isNegative = true;
+            i++;
+        } else if (s.charAt(i) == '+') {
+            i++; // Skip the '+' sign
+        }
+        
+        // Step 3: Process digits
+        long result = 0;
+        while (i < s.length() && Character.isDigit(s.charAt(i))) {
+            System.out.println("i value is "+s.charAt(i)+"    "+i);
+            System.out.println(s.length());
+            result = result * 10 + (s.charAt(i) - '0');
+            i++;
+            
+            // Step 4: Check for overflow
+            if (result > Integer.MAX_VALUE) {
+                return isNegative ? Integer.MIN_VALUE : Integer.MAX_VALUE;
+            }
+        }
+        
+        // Step 5: Apply the sign
+        if (isNegative) {
+            result = -result;
+        }
+        
+        // Step 6: Handle overflow and underflow
+        if (result < Integer.MIN_VALUE) {
+            return Integer.MIN_VALUE;
+        } else if (result > Integer.MAX_VALUE) {
+            return Integer.MAX_VALUE;
+        }
+        
+        return (int) result;
+    }
+     
 }
