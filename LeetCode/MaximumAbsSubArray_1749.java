@@ -13,6 +13,7 @@ public class MaximumAbsSubArray_1749 {
         int currentmin = nums[0];
         int globalmin  = nums[0];
 
+        // kadane's algorithm
         for(int i=1;i<nums.length;i++){
             currentmax = Math.max(nums[i],currentmax+nums[i]);
             globalmax  = Math.max(globalmax,currentmax);

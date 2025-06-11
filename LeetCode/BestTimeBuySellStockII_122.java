@@ -2,7 +2,7 @@ package LeetCode;
 
 public class BestTimeBuySellStockII_122 {
      public static void main(String[] args) {
-        int[] prices = {7,3,5,1,6,4,10};
+        int[] prices = {1,2,3,4,5};
         int result = maxProfit(prices);
         System.out.println("result is "+result);
      }
@@ -11,8 +11,10 @@ public class BestTimeBuySellStockII_122 {
         int max = 0;
         int buy = prices[0];
         for(int i = 1;i<prices.length;i++){
-            
+            max = Integer.max(max,max+prices[i]-buy);
+            System.out.println("max is "+max);
+            buy = prices[i];
         }
-        return 0;
+        return max;
     }
 }
