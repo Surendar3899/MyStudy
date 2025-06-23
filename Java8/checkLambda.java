@@ -4,8 +4,13 @@ package Java8;
  * InnercheckLambda
  */
  interface MyInterface {
-   abstract void rr();
+   // void rr();
+    void rr1();
     
+}
+
+interface NewInterface{
+    void rr();
 }
 
 public class checkLambda {
@@ -15,6 +20,13 @@ public class checkLambda {
                 System.out.println("explicit call");
             };
         
-        obj.rr();
+        obj.rr1();
+
+        NewInterface ob = () ->
+                           {
+                            System.out.println("new interface");
+                           };
+        ob.rr();                   
+ 
     }
 }
