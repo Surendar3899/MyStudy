@@ -1,3 +1,5 @@
+package Java8.StreamAPI.interviewproblemschatgpt;
+
 import java.util.*;
 
 public class SecondHighestSalary {

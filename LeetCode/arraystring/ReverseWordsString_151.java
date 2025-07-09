@@ -3,7 +3,7 @@ package LeetCode.arraystring;
 public class ReverseWordsString_151 {
     public static void main(String[] args) {
         String s = "the sky is     blue     ";
-        String result = reverseWords(s);
+        String result = reverseWords2(s);
         System.out.println("result is \n"+result);
     }
 

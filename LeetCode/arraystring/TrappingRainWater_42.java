@@ -2,10 +2,14 @@ package LeetCode.arraystring;
 
 public class TrappingRainWater_42 {
     public static void main(String[] args) {
-       int[] height = {0,1,0,2,1,0,1,3,2,1,2,1};
-       int result = trap2(height);
+       //int[] height = {0,1,0,2,1,0,1,3,2,1,2,1};
+       int[] height = {4,2,0,3,2,5};
+       int result = trap(height);
        System.out.println("result is "+result);
     }
+
+
+
     public static int trap(int[] height) {
         final int n = height.length;
         int ans = 0;

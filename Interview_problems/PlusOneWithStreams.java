@@ -31,7 +31,7 @@ public class PlusOneWithStreams {
     }
 
     public static void main(String[] args) {
-        int[] digits = {1, 2, 0}; // Equivalent to 123
+        int[] digits = {1, 2, 8}; // Equivalent to 123
         int[] result = plusOne(digits);
 
         System.out.print("Result: ");
