@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class MergeSortInPlaceLogicFirst {
      public static void main(String[] args) {
-        int[] arr = {4,5,3,2,1};
+        int[] arr = {4,3,2,7,5,6,1,100,87};
         mergeSortInPlace(arr,0,arr.length);
         System.out.println("Arrays "+Arrays.toString(arr));
      }
@@ -14,7 +14,7 @@ public class MergeSortInPlaceLogicFirst {
             return;
         }
 
-        int mid = (start-end)/2;
+        int mid = (start+end)/2;
         System.out.println("1  "+start+" "+mid);
         mergeSortInPlace(arr,start,mid);
         System.out.println("2  "+mid+" "+end);

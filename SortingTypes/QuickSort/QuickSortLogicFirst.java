@@ -5,12 +5,12 @@ import java.util.Arrays;
 public class QuickSortLogicFirst {
    public static void main(String[] args) {
     int[] arr = {5,8,4,3,7,6,2,9,5};
-    quickSort(arr,0,arr.length-1);
+    quickSort(arr,0,arr.length-1,"from start");
     System.out.println("result "+ Arrays.toString(arr));
    }
 
-   private static void quickSort(int[] arr, int i, int j) {
-    System.out.println("quicksort "+ Arrays.toString(arr)+"   "+i+"   "+j);
+   private static void quickSort(int[] arr, int i, int j,String come) {
+    System.out.println("quicksort "+ Arrays.toString(arr)+"   "+i+"   "+j+"       "+come);
 
        if(i>j){
         return;
@@ -42,8 +42,8 @@ public class QuickSortLogicFirst {
             }
         }
 
-        quickSort(arr,i,end);
-        quickSort(arr,start,j);
+        quickSort(arr,i,end,"from first");
+        quickSort(arr,start,j,"from second");
 
        
 

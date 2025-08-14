@@ -1,3 +1,7 @@
-SELECT name
-FROM Customer
-WHERE COALESCE(referee_id, 0) != 2;
+SELECT name FROM Customer WHERE COALESCE(referee_id, 0) != 2;
+
+change field to non unique:
+       ALTER TABLE employees DROP INDEX email;
+
+Explain:
+      EXPLAIN SELECT * FROM employees WHERE designation = 'Manager';

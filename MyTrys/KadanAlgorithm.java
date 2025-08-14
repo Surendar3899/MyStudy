@@ -1,8 +1,9 @@
 package MyTrys;
 
 public class KadanAlgorithm {
+
     public static void main(String[] args) {
-        int[] nums = {1,-3,2,3,8,-15,4,15,10};
+        int[] nums = {4,2,2,-8,2};
 
         int currentmax = nums[0];
         int globalmax =  nums[0];

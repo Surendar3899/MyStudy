@@ -1,0 +1,91 @@
+Alright — here’s a solid list of MySQL interview questions (both beginner-friendly and tricky ones) that often come up, grouped by topic.
+
+1. Basic SELECT & Filtering
+
+	Get all employees whose salary is greater than 50000.
+
+	Retrieve the top 3 highest salaries.
+
+	Find employees who joined in the last 6 months.
+
+	Select employees whose name starts with “A” and ends with “n”.
+
+	Find employees whose manager_id is NULL.
+
+2. Aggregations & Grouping
+
+	Find the average salary in each department.
+
+	Count the number of employees for each designation.
+
+	Find departments having more than 5 employees.
+
+	Get the salary that is received by more than one employee (HAVING COUNT(*) > 1).
+
+	Find the highest paid employee in each department.
+
+3. Joins
+
+	Get employee name with their manager’s name (SELF JOIN).
+
+	List employees along with department name (INNER JOIN).
+
+	Show all employees and departments even if not assigned (LEFT JOIN).
+
+	Find employees who do not have a manager (LEFT JOIN ... WHERE manager_id IS NULL).
+
+4. Subqueries
+
+	Find employees whose salary is above the average salary.
+
+	Find the second highest salary (LIMIT/OFFSET or MAX inside subquery).
+
+	Update all employees whose salary equals the maximum salary (the FROM clause trick we just discussed).
+
+	Delete employees earning the minimum salary.
+
+5. String & Date Functions
+
+	Extract year from joining_date.
+
+	Show employees whose email domain is "gmail.com".
+
+	Find the difference in days between joining date and today.
+
+	Convert names to uppercase.
+
+6. Advanced / Tricky
+
+	Self-join to get employee-manager hierarchy.
+
+	Find Nth highest salary without using LIMIT.
+
+	Find employees with duplicate email addresses.
+
+	Find the department with the highest total salary (excluding managers).
+
+	Write a query to pivot data (convert rows to columns).
+
+	Explain the difference between:
+
+	INNER JOIN vs LEFT JOIN
+
+	UNION vs UNION ALL
+
+	EXISTS vs IN
+
+	Explain how indexing works and when to use it.
+
+	Explain why UPDATE ... WHERE col = (SELECT ...) can throw error 1093.
+
+7. Query Optimization / EXPLAIN
+
+	How to check execution plan using EXPLAIN.
+
+	How to detect slow queries in MySQL.
+
+	Difference between clustered and non-clustered indexes in MySQL.
+
+	How composite indexes work (INDEX(col1, col2)).
+
+	Why LIKE '%abc' is slow and how to optimize.

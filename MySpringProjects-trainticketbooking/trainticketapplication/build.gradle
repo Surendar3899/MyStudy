@@ -1,0 +1,31 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '2.7.15'
+	id 'io.spring.dependency-management' version '1.1.6'
+}
+
+group = 'com.training'
+version = '0.0.1-SNAPSHOT'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(8)
+    }
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter:2.7.15'
+	implementation 'org.springframework.boot:spring-boot-starter-web:2.7.15'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test:2.7.15'
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+	compileOnly 'org.projectlombok:lombok:1.18.4'
+	annotationProcessor 'org.projectlombok:lombok:1.18.4'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}

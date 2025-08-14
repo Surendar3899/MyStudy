@@ -46,6 +46,8 @@ public class Demo {
 
 
         Node<Integer> nodeList = new Node<>(2, new Node<>(3, new Node<>(4, null)));
+
+        
         
 
 

@@ -5,6 +5,7 @@ public class MaximumAbsSubArray_1749 {
     public static void main(String[] args) {
         int[] nums = {4,3,2,-9,-23,10,12};
         int result = maxAbsoluteSum(nums);
+        System.out.println("result is "+result);
     }
 
     public static int maxAbsoluteSum(int[] nums) {

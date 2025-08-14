@@ -9,31 +9,32 @@ public class CheckHashCodeandEquals {
 
     public static void main(String[] args) {
         PersonKey p1 = new PersonKey("surendar",25);
-        PersonKey p6 = new PersonKey("surendar",25);
-        PersonKey p5 = new PersonKey("aadhan",25);
-        PersonKey p2 = new PersonKey("susi",25);
-        PersonKey p3 = new PersonKey("aravind",25);
-        PersonKey p4 = new PersonKey("dinesh",25);
-        Set<PersonKey> se = new HashSet<>();
+        PersonKey p6 = new PersonKey("surendar",24);
+        PersonKey p5 = new PersonKey("aadhan",10);
+        PersonKey p2 = new PersonKey("susi",18);
+        PersonKey p3 = new PersonKey("aravind",32);
+        PersonKey p4 = new PersonKey("dinesh",17);
+        Set<PersonKey> se = new TreeSet();
         se.add(p1);
-        System.out.println(p1.hashCode());
+        ////System.out.println(p1.hashCode());
         se.add(p6);
-        System.out.println(p6.hashCode());
+        //System.out.println(p6.hashCode());
         se.add(p5);
-        System.out.println(p5.hashCode());
+        //System.out.println(p5.hashCode());
         se.add(p2);
-        System.out.println(p2.hashCode());
+        //System.out.println(p2.hashCode());
         se.add(p3);
-        System.out.println(p3.hashCode());
+        //System.out.println(p3.hashCode());
         se.add(p4);
-        System.out.println(p4.hashCode());
+        //System.out.println(p4.hashCode());
         
-        System.out.println(se.toString());
+        //System.out.println(se.toString());
 
     }
 
 }
 class PersonKey implements Comparable<PersonKey>{
+    
     String name;
     int age;
     public PersonKey(String name,int age){
@@ -44,25 +45,28 @@ class PersonKey implements Comparable<PersonKey>{
     @Override
     public int compareTo(PersonKey other) {
         // You can compare by name, then age
-        System.out.println("compareTo called");
-        System.out.println("this "+this.name);
-        System.out.println("other "+other.name);
-        int nameCompare = this.name.compareTo(other.name);
-        return nameCompare != 0 ? nameCompare : Integer.compare(this.age, other.age);
+        // //System.out.println("compareTo called");
+        // //System.out.println("this "+this.name);
+        // //System.out.println("other "+other.name);
+        // int nameCompare = this.name.compareTo(other.name);
+        // return nameCompare != 0 ? nameCompare : Integer.compare(this.age, other.age);
+        System.out.println("this.age "+this.age);
+        System.out.println("other.age "+other.age);
+        return this.age - other.age;
     }
 
-     @Override
-        public boolean equals(Object o) {
-            System.out.println("equals called");
-            if (this == o) return true;
-            if (o == null || getClass() != o.getClass()) return false;
-            PersonKey personKey = (PersonKey) o;
-            return age == personKey.age && Objects.equals(name, personKey.name);
-        }
+    @Override
+    public boolean equals(Object o) {
+        ////System.out.println("equals called");
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        PersonKey personKey = (PersonKey) o;
+        return age == personKey.age && Objects.equals(name, personKey.name);
+    }
 
     @Override
     public int hashCode(){
-        System.out.println("hashcode called");
+        ////System.out.println("hashcode called");
         return Objects.hash(name,age);
     }
 
