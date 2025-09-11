@@ -8,7 +8,7 @@ public class LetterCombinationsPhoneNumber_17 {
    public static void main(String[] args) {
       String digits = "234";
       List<String> result = letterCombinations(digits);
-      System.out.println((result));
+      System.out.println("result is "+(result));
    }
 
    public static List<String> letterCombinations(String digits) {
@@ -46,10 +46,10 @@ public class LetterCombinationsPhoneNumber_17 {
             for (String s : result){
                 //System.out.println("2 for "+s );
               for (char c : arr[d - '0'].toCharArray()){
-                //System.out.println("3 for "+c);
+                System.out.println("3 for "+c);
                 temp.add(s + c);
                 result = temp;
-                //System.out.println("result is "+result);
+                System.out.println("result is "+result);
               } 
             }    
         }
