@@ -1,6 +1,36 @@
+import java.util.ArrayList;
+import java.util.List;
 public class GenerateParentheses_22 {
     public static void main(String[] args) {
-        
+        int n = 3;
+        List<String> result = generateParenthesis(n);
+        System.out.println("result ");
+        System.out.println(result);
+    }
+
+    public static List<String> generateParenthesis(int n) {
+        List<String> result = new ArrayList<>();
+        backtrack(result, "", 0, 0, n);
+        return result;
+    }
+
+    private static void backtrack(List<String> result, String current, int open, int close, int max) {
+        System.out.println(current+"    "+open+"    "+close+"          "+max);
+        // if the current string is complete
+        if (current.length() == max * 2) {
+            result.add(current);
+            return; 
+        }
+
+        // if we can still add an opening bracket
+        if (open < max) {
+            backtrack(result, current + "(", open + 1, close, max);
+        }
+
+        // if we can add a closing bracket
+        if (close < open) {
+            backtrack(result, current + ")", open, close + 1, max);
+        }
     }
 
 }
