@@ -1,3 +1,5 @@
+package MyTrys;
+
 public class Deadlock {
 
 

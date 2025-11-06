@@ -1,3 +1,5 @@
+package LeetCode;
+
 public class ValidWord_3136 {
     public static void main(String[] args) {
         String word = "234Adas";

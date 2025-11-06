@@ -1,3 +1,5 @@
+package MyTrys;
+
 public class FindGCD {
     public static void main(String[] args) {
         int a = 12;

@@ -1,3 +1,5 @@
+package LeetCode;
+
 public class Largest3SameDigitNumber_2264 {
     public static void main(String[] args) {
         String num = "6777133339";

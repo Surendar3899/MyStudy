@@ -1,3 +1,5 @@
+package LeetCode;
+
 public class SearchInRotatedSortedArray_33 {
     public static void main(String[] args) {
         int[] nums = {5,1,2,3,4};

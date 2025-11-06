@@ -1,3 +1,4 @@
+package SortingTypes.BobbleSort;
 import java.util.Arrays;
 
 public class BubbleSort {

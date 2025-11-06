@@ -1,3 +1,5 @@
+package MyTrys;
+
 public class FindSecondHighestNumber {
 
     public static void main(String[] args) {

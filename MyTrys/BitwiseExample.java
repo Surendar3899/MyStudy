@@ -1,3 +1,5 @@
+package MyTrys;
+
 public class BitwiseExample {
     public static void main(String[] args) {
         int a = 5;    // binary: 0101

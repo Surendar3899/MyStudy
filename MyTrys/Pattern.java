@@ -1,3 +1,5 @@
+package MyTrys;
+
 public class Pattern {
     public static void main(String[] args) {
         int n = 4;

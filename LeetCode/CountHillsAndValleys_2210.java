@@ -1,3 +1,4 @@
+package LeetCode;
 public class CountHillsAndValleys_2210 {
     public static void main(String[] args) {
         int[] nums = {2,4,1,1,6,5};

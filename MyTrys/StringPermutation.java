@@ -1,3 +1,5 @@
+package MyTrys;
+
 public class StringPermutation {
     static int it = 0;
     public static void main(String[] args){

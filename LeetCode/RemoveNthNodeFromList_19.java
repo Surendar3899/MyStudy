@@ -1,3 +1,5 @@
+package LeetCode;
+
 public class RemoveNthNodeFromList_19 {
 
     public static void main(String[] args) {

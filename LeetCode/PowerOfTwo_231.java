@@ -1,3 +1,5 @@
+package LeetCode;
+
 public class PowerOfTwo_231 {
     public static void main(String[] args) {
         int n = 2;

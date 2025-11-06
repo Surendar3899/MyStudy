@@ -1,3 +1,5 @@
+package MyTrys;
+
 import java.util.Arrays;
 
 public class MergeSort {

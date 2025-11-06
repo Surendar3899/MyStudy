@@ -1,3 +1,4 @@
+package LeetCode;
 import java.util.Arrays;
 
 public class FindFirstLastPosition_34 {

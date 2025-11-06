@@ -1,3 +1,5 @@
+package LeetCode;
+
 public class MaximumScoreFromRemoveSubstring_1717 {
     public static void main(String[] args) {
         String s = "cdbcbbaaabab";

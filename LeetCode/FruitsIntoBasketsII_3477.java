@@ -1,3 +1,5 @@
+package LeetCode;
+
 public class FruitsIntoBasketsII_3477 {
     public static void main(String[] args) {
         int[] fruits = {4,2,5}, baskets = {3,5,4};

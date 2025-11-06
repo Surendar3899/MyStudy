@@ -1,3 +1,4 @@
+package LeetCode;
 public class ConvertBinaryNumber_1290 {
     public static class ListNode {
         int val;

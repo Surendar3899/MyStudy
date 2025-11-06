@@ -1,3 +1,5 @@
+package MyTrys;
+
 public class Bitwise {
 
     // Leetcode _136 problem

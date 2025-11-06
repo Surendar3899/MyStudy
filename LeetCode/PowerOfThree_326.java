@@ -1,3 +1,5 @@
+package LeetCode;
+
 public class PowerOfThree_326 {
     public static void main(String[] args) {
         int n = 27;
