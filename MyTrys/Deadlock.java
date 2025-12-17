@@ -31,7 +31,7 @@ class B {
     synchronized void methodB(A a) {
         System.out.println("Thread-2: Holding B, waiting for A");
         try { 
-            //Thread.sleep(100); 
+            Thread.sleep(100); 
         } catch (Exception e) {
 
         }

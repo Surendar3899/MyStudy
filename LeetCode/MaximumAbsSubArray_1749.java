@@ -3,7 +3,7 @@ package LeetCode;
 public class MaximumAbsSubArray_1749 {
 
     public static void main(String[] args) {
-        int[] nums = {4,3,2,-9,-23,10,12};
+        int[] nums = {4,3,2,-9,-14,20};
         int result = maxAbsoluteSum(nums);
         System.out.println("result is "+result);
     }
@@ -26,7 +26,7 @@ public class MaximumAbsSubArray_1749 {
 
         globalmin = Math.abs(globalmin);
         globalmax = Math.max(globalmax,globalmin);
-        //System.out.println("globalmax is "+globalmax);
+        System.out.println("globalmax is "+globalmax);
 
         return globalmax;
     }
