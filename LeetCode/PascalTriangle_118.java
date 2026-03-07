@@ -9,7 +9,12 @@ public class PascalTriangle_118 {
         int numRows = 5;
         List<List<Integer>> result = generateNew(numRows);
         System.out.println("result is "+result);
+
+        // List<List<Integer>> result = generate(numRows);
+        // System.out.println(result);
+
     }
+
     public static List<List<Integer>> generate(int numRows) {
         List<List<Integer>> ans = new ArrayList<>();
 
@@ -19,12 +24,21 @@ public class PascalTriangle_118 {
             ans.add(Arrays.asList(temp));
         }
 
+
         for (int i = 2; i < numRows; ++i)
         for (int j = 1; j < ans.get(i).size() - 1; ++j)
             ans.get(i).set(j, ans.get(i - 1).get(j - 1) + ans.get(i - 1).get(j));
 
+        for (int i = 2; i < numRows; ++i){
+            for (int j = 1; j < ans.get(i).size() - 1; ++j){
+                ans.get(i).set(j, ans.get(i - 1).get(j - 1) + ans.get(i - 1).get(j));
+            }    
+        }    
+
+
         return ans;
     }
+
 
     public static List<List<Integer>> generateNew(int numRows) {
        List<List<Integer>> ans = new ArrayList<>();
@@ -45,6 +59,7 @@ public class PascalTriangle_118 {
 
        return ans;
     }
+
 
 
 }
