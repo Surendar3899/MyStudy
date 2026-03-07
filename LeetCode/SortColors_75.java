@@ -11,7 +11,7 @@ public class SortColors_75 {
 
         
     }
-
+   //Dutch National Flag Algorithm was proposed by Edsger W. Dijkstra.
     public static void sortColors(int[] nums) {
 
         int mid = 0;

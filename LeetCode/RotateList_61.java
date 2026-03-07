@@ -47,6 +47,7 @@ public class RotateList_61 {
 
 
         int stepsToNewTail = length - k - 1;
+        System.out.println("stepsToNewTail is "+stepsToNewTail);
 
         // Step 4: find new tail
         ListNode newTail = head;

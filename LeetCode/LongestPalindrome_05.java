@@ -2,7 +2,7 @@ package LeetCode;
 
 public class LongestPalindrome_05 {
     public static void main(String[] args) {
-        String s = "babad";
+        String s = "bababad";
         //String s = "acdxbzbx";
         String longPalindrome = longestPalindrome(s);
         System.out.println(longPalindrome);

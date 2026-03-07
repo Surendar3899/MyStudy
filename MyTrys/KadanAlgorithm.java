@@ -3,7 +3,7 @@ package MyTrys;
 public class KadanAlgorithm {
 
     public static void main(String[] args) {
-        int[] nums = {4,2,2,-8,2};
+        int[] nums = {4,2,1,-8,2};
 
         int currentmax = nums[0];
         int globalmax =  nums[0];
