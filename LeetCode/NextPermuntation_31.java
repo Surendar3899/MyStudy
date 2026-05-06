@@ -6,7 +6,7 @@ import java.util.List;
 
 public class NextPermuntation_31 {
     public static void main(String[] args) {
-       int[] arr = {1,2,4,3,5};
+       int[] arr = {1,2,5,4,3};
        nextPermutation(arr);
        System.out.println(Arrays.toString(arr));
         

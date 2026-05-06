@@ -174,7 +174,9 @@ public class First_01 {
         List<String> words2 = Arrays.asList("java", "spring", "boot", "api", "rest", "soap", "micro");
 
         Map<Boolean,List<String>> result19 = words2.stream().filter(n->n.length()>=4).collect(Collectors.groupingBy(n->n.contains("o")));
+        Map<Boolean,List<String>> result20 = words2.stream().filter(n->n.length()>=4).collect(Collectors.partitioningBy(n->n.contains("o")));
         System.out.println("result19 "+result19);
+        System.out.println("result20 "+result20);
 
 
 

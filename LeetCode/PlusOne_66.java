@@ -7,10 +7,26 @@ import java.util.List;
 
 public class PlusOne_66 {
     public static void main(String[] args) {
-        int[] digits = {1,9,8,9};
-        int[] result = plusOne(digits);
+        int[] digits = {9,9,9};
+        int[] result = myTry(digits);
         System.out.println(Arrays.toString(result));
 
+    }
+
+    public static int[] myTry(int[] digit){
+       int n = digit.length;
+
+       for(int i=digit.length-1;i>=0;i--){
+        if(digit[i]<9){
+            digit[i]++;
+            return digit;
+        }
+        digit[i] = 0;
+       }
+
+        int[] result = new int[n+1];
+        result[0] = 1;
+       return result;
     }
 
     public static int[] plusOne(int[] digits) {

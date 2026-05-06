@@ -3,9 +3,15 @@ package Java8.StreamAPI.practice;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
+import java.util.TreeMap;
+import java.util.function.Function;
+import java.util.stream.Collector;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class Chatgpt_feb17 {
     //https://chatgpt.com/share/69946afd-2320-8011-9093-55934a1f18ef
@@ -145,9 +151,124 @@ public class Chatgpt_feb17 {
         System.out.println("shortest1 "+shortest1);
 
 
+        List<Integer> nums23 = Arrays.asList(1, 2, 3, 4, 5);
+        int[] listToArray = nums23.stream().mapToInt(Integer::intValue).toArray();
+        System.out.println(Arrays.toString(listToArray));
+
+
+        String str = "programming";
+        List<Character> distinctCharacter = str.chars().mapToObj(c->(char)c).distinct().collect(Collectors.toList());
+        System.out.println("distinctCharacter is "+distinctCharacter);
+
+        List<Integer> nums24 = Arrays.asList(1, 2, 2, 3, 3, 3, 4);
+        Map<Integer, Long> freqMap = nums24.stream().collect(Collectors.groupingBy(n->n,Collectors.counting()));
+        System.out.println("freqmap is "+freqMap);
+
+        List<String> words6 = Arrays.asList("banana", "apple", "cherry", "date");
+        List<String> reversealphabeticalorder = words6.stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList());
+        System.out.println("reversealphabeticalorder "+reversealphabeticalorder);
+
+        List<Integer> nums25 = Arrays.asList(10, 20, 30, 40);
+        int lastElement = nums25.stream().reduce((a, b) -> b).orElse(-1);
+        System.out.println("lastElement is "+lastElement);
+
+        List<Integer> nums26 = Arrays.asList(1, 2, 3, 4, 2);
+        boolean hasDuplicates = nums26.stream().distinct().count() != nums26.size();
+        System.out.println("hasDuplicates  "+hasDuplicates);
+
+
+        List<Integer> nums27 = Arrays.asList(1, 2, 3, 4, 5);
+        List<Integer> reversed = IntStream.range(0, nums27.size()).mapToObj(i -> nums27.get(nums27.size()-1-i)).collect(Collectors.toList());
+        System.out.println("reversed is "+reversed);
+
+
+
+
+        //#Internediate mapping,flatmap,optional,groupingby
+        List<Employee> employees = Arrays.asList(new Employee(1, "A", 40000),new Employee(2, "B", 60000),new Employee(3, "C", 70000));
+        List<Employee> salaryGreaterthan50000 = employees.stream().filter(n->n.getSalary() > 50000).collect(Collectors.toList());
+        System.out.println("salaryGreaterthan50000  "+salaryGreaterthan50000);
+
+        // List<String> namesFromEmployee = employees.stream().collect(Collectors.mapping(n->n.getName(), Collectors.toList()));
+        List<String> namesFromEmployee = employees.stream().map(Employee::getName).collect(Collectors.toList());
+        System.out.println("namesFromEmployee  "+namesFromEmployee);
+
+
+        List<Employee> updatedSalaryPercentage = employees.stream().map(n -> new Employee(n.id, n.name, n.salary * (1.10))).collect(Collectors.toList());
+        System.out.println("updatedSalaryPercentage  "+updatedSalaryPercentage);
+        
+        
+        Map<String, List<String>> grouped = employees.stream()
+                                         .collect(Collectors.groupingBy(n -> n.getSalary() >= 50000 ? "HIGH":"LOW",TreeMap::new,Collectors.mapping(n->n.getName(), Collectors.toList())));
+        System.out.println("grouped  "+grouped);
+
+
+        Map<String, Long> groupedByCount = employees.stream().collect(Collectors.groupingBy(n -> n.getSalary() >= 50000 ? "HIGH":"LOW",Collectors.counting()));
+        System.out.println("groupedByCount  "+groupedByCount);
+
+
+        Employee maxSalaryEmp = employees.stream().max(Comparator.comparingDouble(n->n.getSalary())).orElse(null);
+        System.out.println("maxSalaryEmp  "+maxSalaryEmp);
+
+        Employee maxSalaryEmpreducemethod = employees.stream().reduce((a, b) -> a.getSalary() > b.getSalary() ? a : b).orElse(null);
+        System.out.println("maxSalaryEmpreducemethod "+maxSalaryEmpreducemethod);
+
+        double avgSalary = employees.stream().mapToDouble(n->n.getSalary()).average().orElse(-1);
+        System.out.println("avgSalary  "+avgSalary);
+
+
+        List<String> salarygreaternames = employees.stream().filter(n->n.getSalary()>50000).map(n->n.getName()).collect(Collectors.toList());
+        System.out.println("salarygreaternames  >> "+salarygreaternames);
+
+        List<Employee> sortedBySalary =employees.stream().sorted(Comparator.comparingDouble(Employee::getSalary).reversed()).collect(Collectors.toList()); 
+        System.out.println("sortedBySalary >>> "+sortedBySalary);
+
+        Map<Double, List<String>> groupedBySalary = employees.stream().collect(Collectors.groupingBy(n->n.getSalary(),Collectors.mapping(n->n.getName(), Collectors.toList())));
+        System.out.println("groupedBySalary >> "+groupedBySalary);
+
+
+
+
+
+
 
 
 
     }
 
+}
+
+class Employee {
+    int id;
+    String name;
+    double salary;
+    public int getId() {
+        return id;
+    }
+    public void setId(int id) {
+        this.id = id;
+    }
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public double getSalary() {
+        return salary;
+    }
+    public void setSalary(double salary) {
+        this.salary = salary;
+    }
+
+    public Employee(int id,String name, double salary){
+        this.id = id;
+        this.name = name;
+        this.salary = salary;
+    }
+
+    @Override
+    public String toString() {
+       return (this.name+" -> "+this.salary); 
+    }
 }

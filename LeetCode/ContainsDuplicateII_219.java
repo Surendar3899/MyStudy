@@ -7,7 +7,7 @@ public class ContainsDuplicateII_219 {
     public static void main(String[] args) {
         int[] nums = {1,2,3,4,2,3};
         //test
-        int k = 3;
+        int k = 2;
         boolean result = containsNearbyDuplicate(nums,k);
         System.out.println("result is "+result);
     }

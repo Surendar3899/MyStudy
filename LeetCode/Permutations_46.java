@@ -1,14 +1,39 @@
 package LeetCode;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 
 public class Permutations_46 {
     static int a = 0;
     public static void main(String[] args) {
-        int[] nums = {1,2,3};
+        int[] nums = {1,1,2,3};
         List<List<Integer>> result = permute(nums);
         System.out.println(result);
+    }
+
+    public static List<List<Integer>> algoTamilaTry(int[] nums){
+        List<List<Integer>> result = new ArrayList<>();
+        myTry(nums,result,new ArrayList<>(),new HashSet<>());
+        return result;
+    }
+
+    private static void myTry(int[] nums, List<List<Integer>> result, ArrayList<Integer> curr, HashSet<Integer> added) {
+        if(curr.size() == nums.length){
+          result.add(new ArrayList<>(curr));
+          return;
+        }
+
+        for(int num:nums){
+          if(!added.contains(num)){
+
+            added.add(num);
+            curr.add(num);
+            myTry(nums,result,curr,added);
+            added.remove(num);
+            curr.remove(curr.size()-1);
+          }
+        }
     }
 
     public static List<List<Integer>> permute(int[] nums) {

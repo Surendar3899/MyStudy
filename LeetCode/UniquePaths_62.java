@@ -19,6 +19,7 @@ public class UniquePaths_62 {
             for (int j = 1; j < n; ++j){
                 dp[j] += dp[j - 1];
             }
+            System.out.println(Arrays.toString(dp));
         }    
 
         return dp[n - 1];
