@@ -19,6 +19,7 @@ public class DigitSum_2243 {
                 sb.append(sum);
             }
             s = sb.toString();
+            
         }
 
        return s;
